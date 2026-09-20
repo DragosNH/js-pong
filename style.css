@@ -8,3 +8,19 @@ body {
     background-color: var(--background-color);
     color: var(--text-main-color);
 }
+
+.text-bar-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.players{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.players .player {
+    margin: 0 35px;
+}
