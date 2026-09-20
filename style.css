@@ -1,22 +1,22 @@
 :root{
     --background-color: #222222;
-    --text-main-color: #ffffff;
+    --white: #ffffff;
 }
 
 body {
     height: 95vh;
     background-color: var(--background-color);
-    color: var(--text-main-color);
+    color: var(--white);
     margin: 0;
 }
 
+
+/* ------ Title & Score ------ */
 .text-bar-container{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-
-
 
 .players-score{
     display: flex;
@@ -31,7 +31,27 @@ body {
 .line{
     width: 100vw;
     height: 1px;
-    background-color: var(--text-main-color);
+    background-color: var(--white);
 }
 
 
+/* ------ Game ------ */
+
+.game-conatiner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player{
+    height: 100px;
+    width: 15px;
+    background-color: var(--white);
+}
+
+.ball{
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    background-color: var(--white);
+}
