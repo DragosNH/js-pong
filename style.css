@@ -1,8 +1,10 @@
 :root{
-    --background-color: #333333;
+    --background-color: #222222;
+    --text-main-color: #ffffff;
 }
 
 body {
     height: 95vh;
     background-color: var(--background-color);
+    color: var(--text-main-color);
 }
