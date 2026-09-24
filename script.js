@@ -44,6 +44,14 @@ function update() {
     if (keys["ArrowDown"]) yPlayerTwo += speed;
     if (keys["ArrowUp"]) yPlayerTwo -= speed;
 
+    const centerOffset = (gameContainer.clientHeight - playerOne.offsetHeight) / 2;
+
+    const maxMove = centerOffset;
+    const minMove = -centerOffset;
+
+    yPlayerOne = Math.max(minMove, Math.min(yPlayerOne, maxMove));
+    yPlayerTwo = Math.max(minMove, Math.min(yPlayerTwo, maxMove));
+
 
     playerOne.style.transform = `translateY(${yPlayerOne}px)`;
     playerTwo.style.transform = `translateY(${yPlayerTwo}px)`;
