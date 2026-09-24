@@ -9,6 +9,9 @@ let speed = 10;
 let yPlayerOne = 0;
 let yPlayerTwo = 0;
 
+let xBall = 0;
+let yBall = 0;
+
 scorePlayerOne.textContent = yPlayerOne;
 scorePlayerTwo.textContent = yPlayerTwo;
 
@@ -39,6 +42,16 @@ function update() {
     if (keys["s"]) yPlayerOne += speed;
     if (keys["z"]) yPlayerOne -= speed;
 
+    xBall += speed;
+    yBall += speed;
+
+    if (xBall > gameContainer.clientWidth - 1000){
+        xBall = 0;
+    }
+
+    if (yBall > gameContainer.clientHeight - 420){
+        yBall -= speed
+    }
 
     // Player Two
     if (keys["ArrowDown"]) yPlayerTwo += speed;
@@ -52,9 +65,13 @@ function update() {
     yPlayerOne = Math.max(minMove, Math.min(yPlayerOne, maxMove));
     yPlayerTwo = Math.max(minMove, Math.min(yPlayerTwo, maxMove));
 
-
+    // Pallet movement on Y-axis
     playerOne.style.transform = `translateY(${yPlayerOne}px)`;
     playerTwo.style.transform = `translateY(${yPlayerTwo}px)`;
+
+    // Ball movement on X & Y axis
+    ball.style.transform = `translateX(${xBall}px)`;
+    ball.style.transform = `translateY(${yBall}px)`;
 
     requestAnimationFrame(update);
 }
